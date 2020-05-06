@@ -1,6 +1,6 @@
-namespace L02_Memory 
+/* namespace L02_Memory {
 
-window.addEventListener("load", function (): void {
+    window.addEventListener("load", mixLetters);
 
     function mixLetters(_letter: string): void {
         let letters: string[] = _letter.split("");
@@ -60,4 +60,4 @@ window.addEventListener("load", function (): void {
     function Hint(_card: HTMLSpanElement; _mixedLetters[index]: string[]): void {
         _card.innerHTML = "" + _mixedLetters[index];
     }
-});
+} */
