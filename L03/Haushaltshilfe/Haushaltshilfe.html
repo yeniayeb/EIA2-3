@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haushaltshilfe</title>
+    <script src="Haushaltshilfe.js"></script>
+    <link rel="stylesheet" href="Haushaltshilfe.css">
+</head>
+
+<body>
+
+    <h1>Haushaltshilfe</h1>
+    <p id="info">
+        Wählen Sie die Aufgaben, welche erledigt werden sollen und die Unterkatrgorien und Anzahlen aus.
+        Wenn sie alles erledigt haben, können Sie unten über den Button ihre Bestellung aufgeben.
+    </p>
+    <div id="form">
+        <form>
+            <fieldset>
+                <h3><label for="task">Bitte wählen Sie eine Aufgabe:</label></h3>
+                <input name="task" list="task" placeholder="Aufgabe auswählen" />
+                <datalist id="task">
+                    <option name="Einkaufen" value="Einkaufen">Einkaufen</option>
+                    <option name="Haushaltsarbeit" value="Haushaltsarbeit">Haushaltsarbeit</option>
+                    <option name="Bank" value="Bank">Bank</option>
+                    <option name="Post" value="Post">Post</option>
+                </datalist>
+            </fieldset>
+
+            <!-- Einkaufsformular -->
+            <div class="einkaufen" disabled>
+
+                <fieldset id="grocery">
+                    <input name="article" list="article" placeholder="Artikel wählen" />
+                    <datalist id="article">
+                        <option name="Brot" value="Brot" unit="1kg" price="4.00">Brot</option>
+                        <option name="Mehl" value="Mehl" unit="1kg-Packung" price="2.40">Mehl</option>
+                        <option name="Eier" value="Eier" unit="10er-Packung" price="3.10">Eier</option>
+                        <option name="Wasser" value="Wasser" unit="1L-Flasche" price="0.60">Wasser</option>
+                        <option name="Milch" value="Milch" unit="1L-Karton" price="0.99">Milch</option>
+                        <option name="Orangensaft" value="Orangensaft" unit="1L-Flasche" price="1.50">Orangensaft
+                        </option>
+                        <option name="Tee" value="Tee" unit="Packung" price="1.00">Tee</option>
+                        <option name="Bananen" value="Bananen" unit="1kg" price="1.10">Bananen</option>
+                        <option name="Kiwi" value="Kiwi" unit="100g" price="0.50">Kiwi</option>
+                        <option name="Äpfel" value="Äpfel" unit="1kg" price="2.00">Äpfel</option>
+                        <option name="Nudeln" value="Nudeln" unit="500g-Packung" price="1.50">Nudeln</option>
+                        <option name="Tomatensoße" value="Tomatensoße" unit="500g-Packung" price="1.30">Tomatensoße
+                        </option>
+                        <option name="Karotten" value="Karotten" unit="1kg" price="2.80">Karotten</option>
+                        <option name="Pilze" value="Pilze" unit="500g" price="3.20">Pilze</option>
+                        <option name="Klopapier" value="Klopapier" unit="Packung" price="5.00">Klopapier</option>
+                    </datalist>
+
+                    <span id="foodAnzahl">
+                        <label for="anzahl">Anzahl</label>
+                        <input type="range" id="anzahl" name="anzahl" min="1" max="5" step="1.0" value="1.0">
+                    </span>
+                    <p id="foodEinheit"></p>
+                </fieldset>
+
+            </div>
+
+            <!-- Haushaltsarbeiten Formular -->
+            <div class="haushaltsarbeit" disabled>
+
+                <fieldset id="household">
+                    <input name="chores" list="chores" placeholder="Tätigkeit wählen" />
+                    <datalist id="chores">
+                        <option name="saugen" value="saugen" unit="Zimmer" price="4.00">Zimmer saugen</option>
+                        <option name="wischen" value="wischen" unit="Zimmer" price="5.00">Zimmer wischen</option>
+                        <option name="fenster" value="fenster" unit="Fenster" price="5.50">Fenster putzen</option>
+                    </datalist>
+
+                    <span id="householdAnzahl">
+                        <label for="homeanzahl">Anzahl</label>
+                        <input type="range" id="homeanzahl" name="homeanzahl" min="1" max="10" step="1.0" value="1.0">
+                    </span>
+                    <p id="householdEinheit"></p>
+                </fieldset>
+
+            </div>
+
+            <!-- Formular Bank -->
+            <div class="bank" disabled>
+
+                <fieldset id="money">
+                    <input name="geld" list="geld" placeholder="Aufgabe wählen" />
+                    <datalist id="geld">
+                        <option name="abheben" value="abheben" unit="Euro" price="5.00">Geld abheben</option>
+                        <option name="einzahlen" value="einzahlen" unit="Euro" price="5.00">Geld einzahlen</option>
+                    </datalist>
+
+                    <span id="householdAnzahl">
+                        <label for="geldanzahl">Menge in 5€ Schritten</label>
+                        <input type="range" id="geldanzahl" name="geldanzahl" min="1" max="100" step="1.0" value="1.0">
+                    </span>
+                    <p>€</p>
+                </fieldset>
+
+            </div>
+
+            <!-- Formular Post -->
+            <div class="post" disabled>
+
+                <fieldset id="postoffice">
+                    <input name="sendung" list="sendung" placeholder="Aufgabe wählen" />
+                    <datalist id="sendung">
+                        <option name="brief" value="brief" unit="Brief" price="1.00">Post einwerfen</option>
+                    </datalist>
+
+                    <span id="postAnzahl">
+                        <label for="briefanzahl">Anzahl</label>
+                        <input type="range" id="briefanzahl" name="briefanzahl" min="1" max="20" step="1.0" value="1.0">
+                    </span>
+                    <p>Briefe</p>
+                </fieldset>
+        </form>
+    </div>
+    </div>
+
+    <div id="Zahlen">
+        <p>Wie möchten sie Zahlen?</p>
+        <input type="radio" name="payment" id="paypal" value="Paypal" /> <label for="paypal">Paypal</label>
+        <input type="radio" name="payment" id="überweisung" value="Überweisung" /> <label
+            for="überweisung">Überweisung</label>
+        <input type="radio" name="payment" id="bar" value="Bar" /> <label for="bar">Bar</label>
+        <input type="radio" name="payment" id="bankeinzug" value="Bankeinzug" /> <label
+            for="bankeinzug">Bankeinzug</label>
+    </div>
+
+
+    <div id="Übersicht">
+        <h3>Bestellübersicht:</h3>
+        <table id="rechnung">
+            <tr>
+                <th>Artikel</th>
+                <th>Anzahl</th>
+                <th>Einheit</th>
+                <th>Preis in €</th>
+                <th>Löschen</th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="tipdiv">
+        <input type="checkbox" name="tip" id="tip"> <label for="tip">ja, </label>
+        <input type="number" name="tipamount" id="tipamount"> <label for="tipamount"> €</label>
+    </div>
+
+    <div id="endsumme">
+        <p>Endsumme: <span id="betrag"></span> €</p>
+    </div>
+
+    <div id="Datum">
+        <label for="date">Lieferdatum</label> <input id="date" type="date">
+    </div>
+
+    <input type="checkbox" name="Angaben" id="Angaben"> <label for="Angaben">Alle Angaben sind richtig!</label>
+    <button id="end">Bestellung abschließen</button>
+
+</body>
+
+</html>
