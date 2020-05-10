@@ -56,9 +56,9 @@
 
                     <span id="foodAnzahl">
                         <label for="anzahl">Anzahl</label>
-                        <input type="range" id="anzahl" name="anzahl" min="1" max="5" step="1.0" value="1.0">
+                        <input type="range" class="slider" id="anzahl" name="anzahl" min="1" max="5" step="1.0" value="1.0">
+                        <label for="anzahl" id="foodEinheit"></label>
                     </span>
-                    <p id="foodEinheit"></p>
                 </fieldset>
 
             </div>
@@ -76,9 +76,9 @@
 
                     <span id="householdAnzahl">
                         <label for="homeanzahl">Anzahl</label>
-                        <input type="range" id="homeanzahl" name="homeanzahl" min="1" max="10" step="1.0" value="1.0">
+                        <input type="range" class="slider" id="homeanzahl" name="homeanzahl" min="1" max="10" step="1.0" value="1.0">
+                        <label for="homeanzahl" id="householdEinheit"></label>
                     </span>
-                    <p id="householdEinheit"></p>
                 </fieldset>
 
             </div>
@@ -95,9 +95,9 @@
 
                     <span id="householdAnzahl">
                         <label for="geldanzahl">Menge in 5€ Schritten</label>
-                        <input type="range" id="geldanzahl" name="geldanzahl" min="1" max="100" step="1.0" value="1.0">
+                        <input type="range" class="slider" id="geldanzahl" name="geldanzahl" min="1" max="100" step="1.0" value="1.0">
+                        <label for="geldanzahl">€</label>
                     </span>
-                    <p>€</p>
                 </fieldset>
 
             </div>
@@ -113,53 +113,68 @@
 
                     <span id="postAnzahl">
                         <label for="briefanzahl">Anzahl</label>
-                        <input type="range" id="briefanzahl" name="briefanzahl" min="1" max="20" step="1.0" value="1.0">
+                        <input type="range" class="slider" id="briefanzahl" name="briefanzahl" min="1" max="20" step="1.0" value="1.0">
+                        <label for="briefanzahl">Briefe</label>
                     </span>
-                    <p>Briefe</p>
                 </fieldset>
         </form>
     </div>
     </div>
 
     <div id="Zahlen">
-        <p>Wie möchten sie Zahlen?</p>
-        <input type="radio" name="payment" id="paypal" value="Paypal" /> <label for="paypal">Paypal</label>
-        <input type="radio" name="payment" id="überweisung" value="Überweisung" /> <label
-            for="überweisung">Überweisung</label>
-        <input type="radio" name="payment" id="bar" value="Bar" /> <label for="bar">Bar</label>
-        <input type="radio" name="payment" id="bankeinzug" value="Bankeinzug" /> <label
-            for="bankeinzug">Bankeinzug</label>
+        <fieldset>
+            <p>Wie möchten sie Zahlen?</p>
+            <input type="radio" name="payment" id="paypal" value="Paypal" /> <label for="paypal">Paypal</label>
+            <input type="radio" name="payment" id="überweisung" value="Überweisung" /> <label
+                for="überweisung">Überweisung</label>
+            <input type="radio" name="payment" id="bar" value="Bar" /> <label for="bar">Bar</label>
+            <input type="radio" name="payment" id="bankeinzug" value="Bankeinzug" /> <label
+                for="bankeinzug">Bankeinzug</label>
+        </fieldset>
     </div>
 
 
-    <div id="Übersicht">
-        <h3>Bestellübersicht:</h3>
-        <table id="rechnung">
-            <tr>
-                <th>Artikel</th>
-                <th>Anzahl</th>
-                <th>Einheit</th>
-                <th>Preis in €</th>
-                <th>Löschen</th>
-            </tr>
-        </table>
-    </div>
+    <div id="position">
+        <div id="Übersicht">
+            <fieldset>
+                <h3>Bestellübersicht:</h3>
+                <table id="rechnung">
+                    <tr>
+                        <th>Artikel</th>
+                        <th>Anzahl</th>
+                        <th>Einheit</th>
+                        <th>Preis in €</th>
+                        <th>Löschen</th>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
 
-    <div id="tipdiv">
-        <input type="checkbox" name="tip" id="tip"> <label for="tip">ja, </label>
-        <input type="number" name="tipamount" id="tipamount"> <label for="tipamount"> €</label>
-    </div>
+        <div id="tipdiv">
+            <fieldset>
+                <input type="checkbox" name="tip" id="tip"> <label for="tip">ja, </label>
+                <input type="number" name="tipamount" id="tipamount"> <label for="tipamount"> €</label>
+            </fieldset>
+        </div>
 
-    <div id="endsumme">
-        <p>Endsumme: <span id="betrag"></span> €</p>
-    </div>
+        <div id="endsumme">
+            <fieldset>
+                <p>Endsumme: <span id="betrag"></span> €</p>
+            </fieldset>
+        </div>
 
-    <div id="Datum">
-        <label for="date">Lieferdatum</label> <input id="date" type="date">
-    </div>
+        <div id="Datum">
+            <fieldset>
+                <label for="date">Lieferdatum: </label> <input id="date" type="date">
+            </fieldset>
+        </div>
 
-    <input type="checkbox" name="Angaben" id="Angaben"> <label for="Angaben">Alle Angaben sind richtig!</label>
-    <button id="end">Bestellung abschließen</button>
+        <fieldset>
+            <input type="checkbox" name="Angaben" id="Angaben"> <label for="Angaben">Alle Angaben sind richtig!</label>
+        </fieldset>
+        <button id="end">Bestellung abschließen</button>
+
+    </div>
 
 </body>
 
