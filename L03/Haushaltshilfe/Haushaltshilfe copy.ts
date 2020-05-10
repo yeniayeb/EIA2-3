@@ -4,6 +4,7 @@ namespace Haushaltshilfe {
     /* Variablen */
     let totalCost: number = 0;
     let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#form");
+    let confirm: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#confirm");
     //let task: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("#task");
     let article: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("#grocery");
     let household: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("#household");
@@ -19,8 +20,10 @@ namespace Haushaltshilfe {
     function handleLoad(): void {
         // Event-Listener auf alle Buttons, nachdem alles geladen wurde
         form.addEventListener("change", handleChange);
+        confirm.addEventListener("click", handleChange);
         tip.addEventListener("change", handleTip);
         submit.addEventListener("click", BestellungAufgeben);
+        
     }
 
     function handleChange(_event: Event): void {
@@ -101,7 +104,7 @@ namespace Haushaltshilfe {
                         newfield.classList.add("einkaufen");
                         break;
 
-                    case "money":
+                    case "geld":
                         let money: string = String(item.getAttribute("value"));
                         if (money == "abheben") {
                             let summe: number = Number(formData2.get("#geldanzahl"));
@@ -131,7 +134,7 @@ namespace Haushaltshilfe {
                         }
                         break;
 
-                    case "household":
+                    case "chores":
                         let householdCost: number = Number(item.getAttribute("price"));
                         let bankmenge: number = Number(formData2.get("#homeanzahl"));
                         householdCost = bankmenge * householdCost;
@@ -143,7 +146,7 @@ namespace Haushaltshilfe {
                         totalCost += householdCost;
                         break;
 
-                    case "postoffice":
+                    case "sendung":
                         let postCost: number = Number(item.getAttribute("price"));
                         let postmenge: number = Number(formData2.get("#briefanzahl"));
                         postCost = postmenge * postCost;
