@@ -11,7 +11,7 @@ namespace Haushaltshilfe {
     let postoffice: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("#postoffice");
     let payment: HTMLInputElement = <HTMLInputElement>document.querySelector("#Zahlen");
     let tip: HTMLElement = <HTMLElement>document.querySelector("tipdiv");
-    let totalPrice: HTMLElement = <HTMLElement>document.querySelector("#betrag");
+    let totalPrice: HTMLSpanElement = <HTMLSpanElement>document.querySelector("#betrag");
     let proof: HTMLInputElement = <HTMLInputElement>document.querySelector("#Angaben");
     let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#end");
 
@@ -124,9 +124,10 @@ namespace Haushaltshilfe {
     }
 
     function handleTip(): void {
-        let amount: HTMLInputElement = <HTMLInputElement>document.querySelector("#tipamount");
-        let total: string = "" + totalCost + amount;
-        //total.innerHTML = totalPrice;
+        let tip: HTMLInputElement = <HTMLInputElement>document.querySelector("#tipamount");
+        let amount: number = Number(tip.getAttribute("value"));
+        let total: number = totalCost + amount;
+        total.innerHTML = totalPrice;
     }
 
     function BestellungAufgeben(_event: Event): void {

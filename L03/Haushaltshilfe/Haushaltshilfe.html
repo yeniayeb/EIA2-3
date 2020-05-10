@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haushaltshilfe</title>
-    <script src="Haushaltshilfe.js"></script>
+    <script src="Haushaltshilfe copy.js"></script>
     <link rel="stylesheet" href="Haushaltshilfe.css">
 </head>
 
@@ -30,9 +30,9 @@
             </fieldset>
 
             <!-- Einkaufsformular -->
-            <div class="einkaufen" disabled>
+            <div class="einkaufen">
 
-                <fieldset id="grocery">
+                <fieldset id="grocery" disabled>
                     <input name="article" list="article" placeholder="Artikel wählen" />
                     <datalist id="article">
                         <option name="Brot" value="Brot" unit="1kg" price="4.00">Brot</option>
@@ -64,9 +64,9 @@
             </div>
 
             <!-- Haushaltsarbeiten Formular -->
-            <div class="haushaltsarbeit" disabled>
+            <div class="haushaltsarbeit">
 
-                <fieldset id="household">
+                <fieldset id="household" disabled>
                     <input name="chores" list="chores" placeholder="Tätigkeit wählen" />
                     <datalist id="chores">
                         <option name="saugen" value="saugen" unit="Zimmer" price="4.00">Zimmer saugen</option>
@@ -84,9 +84,9 @@
             </div>
 
             <!-- Formular Bank -->
-            <div class="bank" disabled>
+            <div class="bank">
 
-                <fieldset id="money">
+                <fieldset id="money" disabled>
                     <input name="geld" list="geld" placeholder="Aufgabe wählen" />
                     <datalist id="geld">
                         <option name="abheben" value="abheben" unit="Euro" price="5.00">Geld abheben</option>
@@ -103,9 +103,9 @@
             </div>
 
             <!-- Formular Post -->
-            <div class="post" disabled>
+            <div class="post">
 
-                <fieldset id="postoffice">
+                <fieldset id="postoffice" disabled>
                     <input name="sendung" list="sendung" placeholder="Aufgabe wählen" />
                     <datalist id="sendung">
                         <option name="brief" value="brief" unit="Brief" price="1.00">Post einwerfen</option>
