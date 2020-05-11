@@ -1,6 +1,4 @@
 namespace Haushaltshilfe {
-    window.addEventListener("load", handleLoad);
-
     /* Variablen */
     let totalCost: number = 0;
     let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#form");
@@ -16,6 +14,7 @@ namespace Haushaltshilfe {
     let totalPrice: HTMLSpanElement = <HTMLSpanElement>document.querySelector("#betrag");
     let proof: HTMLInputElement = <HTMLInputElement>document.querySelector("#Angaben");
     let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#end");
+    window.addEventListener("load", handleLoad);
 
 
     function handleLoad(): void {
@@ -24,7 +23,7 @@ namespace Haushaltshilfe {
         confirm.addEventListener("click", handleChange);
         tip.addEventListener("change", handleTip);
         submit.addEventListener("click", BestellungAufgeben);
-        
+
     }
 
     function handleChange(_event: Event): void {
