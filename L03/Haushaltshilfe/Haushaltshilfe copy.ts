@@ -11,6 +11,7 @@ namespace Haushaltshilfe {
     let money: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("money");
     let postoffice: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("#postoffice");
     //let payment: HTMLInputElement = <HTMLInputElement>document.querySelector("#Zahlen");
+    let table: HTMLDivElement = <HTMLDivElement>document.getElementById("rechnung");
     let tip: HTMLElement = <HTMLElement>document.querySelector("tipdiv");
     let totalPrice: HTMLSpanElement = <HTMLSpanElement>document.querySelector("#betrag");
     let proof: HTMLInputElement = <HTMLInputElement>document.querySelector("#Angaben");
@@ -18,7 +19,7 @@ namespace Haushaltshilfe {
 
 
     function handleLoad(): void {
-        // Event-Listener auf alle Buttons, nachdem alles geladen wurde
+        // Event-Listener
         form.addEventListener("change", handleChange);
         confirm.addEventListener("click", handleChange);
         tip.addEventListener("change", handleTip);
@@ -64,7 +65,6 @@ namespace Haushaltshilfe {
         }
 
         function displayOrder(): void {
-            let table: HTMLDivElement = <HTMLDivElement>document.getElementById("rechnung");
             let formData2: FormData = new FormData(document.forms[0]);
 
             for (let entry of formData2) {
