@@ -1,23 +1,25 @@
 "use strict";
 var Haushaltshilfe;
 (function (Haushaltshilfe) {
-    window.addEventListener("load", handleLoad);
     /* Variablen */
     let totalCost = 0;
-    let form = document.querySelector("#form");
-    let task = document.querySelector("#task");
+    let form = document.querySelector("#formular1");
+    let confirm = document.querySelector("#confirm");
     let article = document.querySelector("#grocery");
     let household = document.querySelector("#household");
     let money = document.querySelector("money");
     let postoffice = document.querySelector("#postoffice");
-    let payment = document.querySelector("#Zahlen");
+    //let payment: HTMLInputElement = <HTMLInputElement>document.querySelector("#Zahlen");
+    let table = document.getElementById("rechnung");
     let tip = document.querySelector("tipdiv");
     let totalPrice = document.querySelector("#betrag");
     let proof = document.querySelector("#Angaben");
     let submit = document.querySelector("#end");
+    window.addEventListener("load", handleLoad);
     function handleLoad() {
-        // Event-Listener auf alle Buttons, nachdem alles geladen wurde
+        // Event-Listener
         form.addEventListener("change", handleChange);
+        confirm.addEventListener("click", handleChange);
         tip.addEventListener("change", handleTip);
         submit.addEventListener("click", BestellungAufgeben);
     }
@@ -57,7 +59,9 @@ var Haushaltshilfe;
                 money.disabled = true;
                 postoffice.disabled = true;
             }
-            let table = document.getElementById("rechnung");
+            displayOrder();
+        }
+        function displayOrder() {
             let formData2 = new FormData(document.forms[0]);
             for (let entry of formData2) {
                 let product = "[value='" + entry[1] + "']";
@@ -72,7 +76,7 @@ var Haushaltshilfe;
                 switch (entry[0]) {
                     case "article":
                         let itemPrice = Number(item.getAttribute("price"));
-                        let menge = Number(formData2.get("anzahl"));
+                        let menge = Number(formData2.get("#anzahl"));
                         let einheit = String(item.getAttribute("unit"));
                         itemPrice = menge * itemPrice;
                         // Werte in Tabelle Versuch
@@ -91,10 +95,10 @@ var Haushaltshilfe;
                         let newfield = document.createElement("div");
                         newfield.classList.add("einkaufen");
                         break;
-                    case "money":
+                    case "geld":
                         let money = String(item.getAttribute("value"));
                         if (money == "abheben") {
-                            let summe = Number(formData2.get("geldanzahl"));
+                            let summe = Number(formData2.get("#geldanzahl"));
                             tdartikel.innerHTML = "" + money;
                             tdanzahl.innerHTML = "" + summe;
                             row.appendChild(tdartikel);
@@ -119,18 +123,20 @@ var Haushaltshilfe;
                             break;
                         }
                         break;
-                    case "household":
-                        let itemCost = Number(item.getAttribute("price"));
+                    case "chores":
+                        let householdCost = Number(item.getAttribute("price"));
+                        let bankmenge = Number(formData2.get("#homeanzahl"));
+                        householdCost = bankmenge * householdCost;
                         tdartikel.innerHTML = "" + entry[1];
-                        tdanzahl.innerHTML = "" + itemCost;
+                        tdanzahl.innerHTML = "" + householdCost;
                         row.appendChild(tdartikel);
                         row.appendChild(tdanzahl);
                         row.appendChild(tdeinheit);
-                        totalCost += itemCost;
+                        totalCost += householdCost;
                         break;
-                    case "postoffice":
+                    case "sendung":
                         let postCost = Number(item.getAttribute("price"));
-                        let postmenge = Number(formData2.get("anzahl"));
+                        let postmenge = Number(formData2.get("#briefanzahl"));
                         postCost = postmenge * postCost;
                         tdartikel.innerHTML = "0" + entry[1];
                         tdanzahl.innerHTML = "" + postCost;
@@ -144,16 +150,21 @@ var Haushaltshilfe;
                 totalPrice.innerHTML = totalCost.toFixed(2);
             }
         }
-        function handleTip() {
-            let tip = document.querySelector("#tipamount");
-            let amount = Number(tip.getAttribute("value"));
-            let total = totalCost + amount;
-            total.innerHTML = totalPrice;
-        }
-        function BestellungAufgeben(_event) {
-            let date = document.querySelector("#date");
-            let datum = date.value;
+    }
+    function handleTip() {
+        let tip = document.querySelector("#tipamount");
+        let amount = Number(tip.getAttribute("value"));
+        let total = totalCost + amount;
+        total.innerHTML = totalPrice;
+    }
+    function BestellungAufgeben(_event) {
+        let date = document.querySelector("#date");
+        let datum = date.value;
+        if (proof.checked == true) {
             alert("Ihre Bestellung wird bearbeitet. Sie wird am " + datum + " zu Ihnen geliefert!");
+        }
+        else {
+            proof.classList.add("mark");
         }
     }
 })(Haushaltshilfe || (Haushaltshilfe = {}));
