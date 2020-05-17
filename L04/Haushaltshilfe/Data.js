@@ -1,0 +1,44 @@
+"use strict";
+var L04_Haushaltshilfe;
+(function (L04_Haushaltshilfe) {
+    L04_Haushaltshilfe.data = {
+        article: [
+            { name: "Brot", unit: "1kg", price: 4.00 },
+            { name: "Mehl", unit: "1kg-Packung", price: 2.40 },
+            { name: "Eier", unit: "10er-Packung", price: 3.10 },
+            { name: "Wasser", unit: "1L-Flasche", price: 0.60 },
+            { name: "Milch", unit: "1L-Karton", price: 0.99 },
+            { name: "Orangensaft", unit: "1L-Flasche", price: 1.50 },
+            { name: "Tee", unit: "Packung", price: 1.00 },
+            { name: "Bananen", unit: "1kg", price: 1.10 },
+            { name: "Kiwi", unit: "100g", price: 0.50 },
+            { name: "Äpfel", unit: "1kg", price: 2.00 },
+            { name: "Nudeln", unit: "500g-Packung", price: 1.50 },
+            { name: "Tomatensoße", unit: "500g-Packung", price: 1.30 },
+            { name: "Karotten", unit: "1kg", price: 2.80 },
+            { name: "Pilze", unit: "500g", price: 3.20 },
+            { name: "Klopapier", unit: "Packung", price: 5.00 }
+        ],
+        househelp: [
+            { name: "Zimmer saugen", unit: "Zimmer", price: 4 },
+            { name: "Zimmer wischen", unit: "Zimmer", price: 5 },
+            { name: "Fenster putzen", unit: "Fenster", price: 5.50 }
+        ],
+        bankhelp: [
+            { name: "Geld abheben", unit: "Euro", price: 5.00 },
+            { name: "Geld einzahlen", unit: "Euro", price: 5.00 }
+        ],
+        posthelp: [
+            { name: "Post einwerfen", unit: "Briefe", price: 1.00 }
+        ]
+    };
+    L04_Haushaltshilfe.detail = {
+        zahlungsart: [
+            { name: "Paypal" },
+            { name: "Überweisung" },
+            { name: "Bar" },
+            { name: "Bankeinzug" }
+        ]
+    };
+})(L04_Haushaltshilfe || (L04_Haushaltshilfe = {}));
+//# sourceMappingURL=Data.js.map

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haushaltshilfe</title>
-    <script src="Haushaltshilfe copy.js"></script>
+    <script src="Haushaltshilfe.js"></script>
     <link rel="stylesheet" href="Haushaltshilfe.css">
 </head>
 
@@ -17,19 +17,16 @@
         Wenn sie alles erledigt haben, können Sie unten über den Button ihre Bestellung aufgeben.
     </p>
     <div id="form">
-        <form id="formular1">
-            <fieldset>
-                <h3><label for="task">Bitte wählen Sie eine Aufgabe:</label></h3>
-                <input name="task" list="task" placeholder="Aufgabe auswählen" />
-                <datalist id="task">
-                    <option name="Einkaufen" value="Einkaufen">Einkaufen</option>
-                    <option name="Haushaltsarbeit" value="Haushaltsarbeit">Haushaltsarbeit</option>
-                    <option name="Bank" value="Bank">Bank</option>
-                    <option name="Post" value="Post">Post</option>
-                </datalist>
-                <button type="button" id="confirm">Ok</button>
-            </fieldset>
+        <fieldset>
+            <h3>Bitte wählen Sie eine Aufgabe:</h3>
+            <input type="radio" name="task" id="A_einkaufen"><label>Einkaufen</label><br>
+            <input type="radio" name="task" id="A_haushaltsarbeit"><label>Haushaltsarbeit</label><br>
+            <input type="radio" name="task" id="A_bank"><label>Bank</label><br>
+            <input type="radio" name="task" id="A_post"><label>Post</label><br>
+            <button type="button" id="confirm">Ok</button>
+        </fieldset>
 
+        <form id="formular1">
             <!-- Einkaufsformular -->
             <div class="einkaufen">
 
@@ -57,9 +54,11 @@
 
                     <span id="foodAnzahl">
                         <label for="anzahl">Anzahl</label>
-                        <input type="range" class="slider" id="anzahl" name="anzahl" min="1" max="5" step="1.0" value="1.0">
+                        <input type="range" class="slider" id="anzahl" name="anzahl" min="1" max="5" step="1.0"
+                            value="1.0">
                         <label for="anzahl" id="foodEinheit"></label>
                     </span>
+                    <button type="button" id="getfood">Ok</button>
                 </fieldset>
 
             </div>
@@ -77,9 +76,11 @@
 
                     <span id="householdAnzahl">
                         <label for="homeanzahl">Anzahl</label>
-                        <input type="range" class="slider" id="homeanzahl" name="homeanzahl" min="1" max="10" step="1.0" value="1.0">
+                        <input type="range" class="slider" id="homeanzahl" name="homeanzahl" min="1" max="10" step="1.0"
+                            value="1.0">
                         <label for="homeanzahl" id="householdEinheit"></label>
                     </span>
+                    <button type="button" id="gethelp">Ok</button>
                 </fieldset>
 
             </div>
@@ -96,9 +97,11 @@
 
                     <span id="householdAnzahl">
                         <label for="geldanzahl">Menge in 5€ Schritten</label>
-                        <input type="range" class="slider" id="geldanzahl" name="geldanzahl" min="1" max="100" step="1.0" value="1.0">
+                        <input type="range" class="slider" id="geldanzahl" name="geldanzahl" min="1" max="100"
+                            step="1.0" value="1.0">
                         <label for="geldanzahl">€</label>
                     </span>
+                    <button type="button" id="getmoney">Ok</button>
                 </fieldset>
 
             </div>
@@ -114,9 +117,11 @@
 
                     <span id="postAnzahl">
                         <label for="briefanzahl">Anzahl</label>
-                        <input type="range" class="slider" id="briefanzahl" name="briefanzahl" min="1" max="20" step="1.0" value="1.0">
+                        <input type="range" class="slider" id="briefanzahl" name="briefanzahl" min="1" max="20"
+                            step="1.0" value="1.0">
                         <label for="briefanzahl">Briefe</label>
                     </span>
+                    <button type="button" id="getpost">Ok</button>
                 </fieldset>
         </form>
     </div>

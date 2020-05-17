@@ -1,8 +1,5 @@
 Aufgabe
-In der Corona-Krise herrschen schwierige Verhältnisse für uns alle, insbesondere für ältere Mitmenschen, die der Risikogruppe angehören. 
-Ein System, das potentielle Helfer und Bedürftige zusammenbringt, könnte den Alltag erleichtern. 
-So können Aufgaben, wie das Einkaufen, übernommen werden, damit die Leute das Haus nicht verlassen und sich unnötiger Gefahr aussetzen müssen. 
-Die Hilfe wird von Freiwilligen übernommen, die sich auf der Plattform anmelden können.
+In der Corona-Krise herrschen schwierige Verhältnisse für uns alle, insbesondere für ältere Mitmenschen, die der Risikogruppe angehören. Ein System, das potentielle Helfer und Bedürftige zusammenbringt, könnte den Alltag erleichtern. So können Aufgaben, wie das Einkaufen, übernommen werden, damit die Leute das Haus nicht verlassen und sich unnötiger Gefahr aussetzen müssen. Die Hilfe wird von Freiwilligen übernommen, die sich auf der Plattform anmelden können.
 
 Ihr habt nun die Aufgabe ein Webformular zu entwickeln in das Bedürftigen eingeben können, was sie benötigen.
 
@@ -25,10 +22,7 @@ Jeder Punkt kostet einen gewissen Betrag an Geld, welcher sich bei jeder Änderu
 
 Am Ende erhält der Benutzer eine Liste mit den Aufgaben die er in Auftrag gegeben hat und den Kosten.
 
-Gerne könnt ihr noch weitere und andere Aufgaben integrieren, es geht hier für euch vor allem darum, 
-den Umgang mit den Formularelementen zu üben. Schaut also, dass ihr verschiedene Elemente nutzt wie Checkboxen, 
-Radiobuttons, Slider, Selects usw. Usability und Gestaltung sind zweitrangig, vor allem muss es funktionieren und Sinn ergeben. 
-Daher ist Untenstehendes auch nur eine Anregung und keine Vorlage!
+Gerne könnt ihr noch weitere und andere Aufgaben integrieren, es geht hier für euch vor allem darum, den Umgang mit den Formularelementen zu üben. Schaut also, dass ihr verschiedene Elemente nutzt wie Checkboxen, Radiobuttons, Slider, Selects usw. Usability und Gestaltung sind zweitrangig, vor allem muss es funktionieren und Sinn ergeben. Daher ist Untenstehendes auch nur eine Anregung und keine Vorlage!
 
 Ein Beispiel wie eine solche Liste am Ende aussehen könnte:
 
