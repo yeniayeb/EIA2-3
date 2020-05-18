@@ -1,7 +1,6 @@
 "use strict";
 var L04_Haushaltshilfe;
 (function (L04_Haushaltshilfe) {
-    window.addEventListener("load", handleLoad);
     /* Variablen */
     let totalCost = 0;
     let aeinkaufen = document.getElementById("A_einkaufen");
@@ -24,6 +23,7 @@ var L04_Haushaltshilfe;
     let totalPrice = document.querySelector("#betrag");
     let proof = document.querySelector("#Angaben");
     let submit = document.querySelector("#end");
+    window.addEventListener("load", handleLoad);
     function handleLoad() {
         console.log("test");
         L04_Haushaltshilfe.generateContent(L04_Haushaltshilfe.data);
