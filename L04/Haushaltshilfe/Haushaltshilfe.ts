@@ -1,5 +1,4 @@
 namespace L04_Haushaltshilfe {
-    window.addEventListener("load", handleLoad);
     /* Variablen */
     let totalCost: number = 0;
     let aeinkaufen: HTMLInputElement = <HTMLInputElement>document.getElementById("A_einkaufen");
@@ -24,6 +23,7 @@ namespace L04_Haushaltshilfe {
     let proof: HTMLInputElement = <HTMLInputElement>document.querySelector("#Angaben");
     let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#end");
 
+    window.addEventListener("load", handleLoad);
 
     function handleLoad(): void {
         console.log("test");
