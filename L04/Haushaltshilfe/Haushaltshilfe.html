@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haushaltshilfe</title>
-    <script src="Haushaltshilfe.js"></script>
+    <script src="Haushaltshilfe.js" async></script>
     <script src="Interface.js"></script>
     <script src="Data.js"></script>
     <script src="generateContent.js"></script>
@@ -37,7 +37,7 @@
                     <fieldset id="article"></fieldset>
                     
                     <span id="foodAnzahl">
-                        <label for="anzahl">Anzahl</label>
+                        <label for="anzahl">Anzahl (1-5)</label>
                         <input type="range" class="slider" id="anzahl" name="anzahl" min="1" max="5" step="1.0"
                             value="1.0">
                         <label for="anzahl" id="foodEinheit"></label>
@@ -51,9 +51,9 @@
             <div class="haushaltsarbeit">
 
                 <fieldset id="household" disabled>
-                    <fieldset id="houshelp"></fieldset>
+                    <fieldset id="househelp"></fieldset>
                     <span id="householdAnzahl">
-                        <label for="homeanzahl">Anzahl</label>
+                        <label for="homeanzahl">Anzahl (1-10)</label>
                         <input type="range" class="slider" id="homeanzahl" name="homeanzahl" min="1" max="10" step="1.0"
                             value="1.0">
                         <label for="homeanzahl" id="householdEinheit"></label>
@@ -85,7 +85,7 @@
                 <fieldset id="postoffice" disabled>
                     <fieldset id="posthelp"></fieldset>
                     <span id="postAnzahl">
-                        <label for="briefanzahl">Anzahl</label>
+                        <label for="briefanzahl">Anzahl (1-20)</label>
                         <input type="range" class="slider" id="briefanzahl" name="briefanzahl" min="1" max="20"
                             step="1.0" value="1.0">
                         <label for="briefanzahl">Briefe</label>
@@ -119,10 +119,12 @@
             </fieldset>
         </div>
 
-        <div id="tipdiv">
+        <div>
             <fieldset>
+                <legend>Trinkgeld</legend>
                 <input type="checkbox" name="tip" id="tip"> <label for="tip">ja, </label>
                 <input type="number" name="tipamount" id="tipamount" min="0"> <label for="tipamount"> €</label>
+                <button id="gettip" type="button">Ok</button>
             </fieldset>
         </div>
 

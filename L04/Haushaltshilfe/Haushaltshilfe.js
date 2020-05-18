@@ -7,34 +7,34 @@ var L04_Haushaltshilfe;
     let ahaushalt = document.getElementById("A_haushaltsarbeit");
     let abank = document.getElementById("A_bank");
     let apost = document.getElementById("A_post");
-    let confirm = document.querySelector("#confirm");
     //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#formular1");
     let article = document.querySelector("#grocery");
-    let getfood = document.querySelector("#getfood");
     let household = document.querySelector("#household");
-    let gethelp = document.querySelector("#gethelp");
-    let money = document.querySelector("money");
-    let getmoney = document.querySelector("#getmoney");
+    let money = document.querySelector("#money");
     let postoffice = document.querySelector("#postoffice");
-    let getpost = document.querySelector("#getpost");
     //let payment: HTMLInputElement = <HTMLInputElement>document.querySelector("#Zahlen");
     let table = document.getElementById("rechnung");
-    let tip = document.querySelector("tipdiv");
     let totalPrice = document.querySelector("#betrag");
     let proof = document.querySelector("#Angaben");
-    let submit = document.querySelector("#end");
     window.addEventListener("load", handleLoad);
     function handleLoad() {
         console.log("test");
         L04_Haushaltshilfe.generateContent(L04_Haushaltshilfe.data);
         L04_Haushaltshilfe.generateExtra(L04_Haushaltshilfe.detail);
         // Event-Listeners
+        let getfood = document.querySelector("#getfood");
         getfood.addEventListener("click", displayOrder);
+        let gethelp = document.querySelector("#gethelp");
         gethelp.addEventListener("click", displayOrder);
+        let getmoney = document.querySelector("#getmoney");
         getmoney.addEventListener("click", displayOrder);
+        let getpost = document.querySelector("#getpost");
         getpost.addEventListener("click", displayOrder);
-        tip.addEventListener("change", handleTip);
+        let tip = document.querySelector("#gettip");
+        tip.addEventListener("click", handleTip);
+        let confirm = document.querySelector("#confirm");
         confirm.addEventListener("click", handleTask);
+        let submit = document.querySelector("#end");
         submit.addEventListener("click", BestellungAufgeben);
     }
     function handleTask() {

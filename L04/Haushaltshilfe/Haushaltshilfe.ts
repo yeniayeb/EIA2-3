@@ -5,39 +5,39 @@ namespace L04_Haushaltshilfe {
     let ahaushalt: HTMLInputElement = <HTMLInputElement>document.getElementById("A_haushaltsarbeit");
     let abank: HTMLInputElement = <HTMLInputElement>document.getElementById("A_bank");
     let apost: HTMLInputElement = <HTMLInputElement>document.getElementById("A_post");
-    let confirm: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#confirm");
-
     //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#formular1");
     let article: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("#grocery");
-    let getfood: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#getfood");
     let household: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("#household");
-    let gethelp: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#gethelp");
-    let money: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("money");
-    let getmoney: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#getmoney");
+    let money: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("#money");
     let postoffice: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("#postoffice");
-    let getpost: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#getpost");
     //let payment: HTMLInputElement = <HTMLInputElement>document.querySelector("#Zahlen");
     let table: HTMLDivElement = <HTMLDivElement>document.getElementById("rechnung");
-    let tip: HTMLElement = <HTMLElement>document.querySelector("tipdiv");
     let totalPrice: HTMLElement = <HTMLElement>document.querySelector("#betrag");
     let proof: HTMLInputElement = <HTMLInputElement>document.querySelector("#Angaben");
-    let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#end");
 
     window.addEventListener("load", handleLoad);
 
     function handleLoad(): void {
+
         console.log("test");
         generateContent(data);
         generateExtra(detail);
         // Event-Listeners
+        let getfood: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#getfood");
         getfood.addEventListener("click", displayOrder);
+        let gethelp: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#gethelp");
         gethelp.addEventListener("click", displayOrder);
+        let getmoney: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#getmoney");
         getmoney.addEventListener("click", displayOrder);
+        let getpost: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#getpost");
         getpost.addEventListener("click", displayOrder);
-        tip.addEventListener("change", handleTip);
+        let tip: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#gettip");
+        tip.addEventListener("click", handleTip);
 
+        let confirm: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#confirm");
         confirm.addEventListener("click", handleTask);
-        
+
+        let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#end");
         submit.addEventListener("click", BestellungAufgeben);
 
     }
