@@ -1,10 +1,8 @@
 namespace L04_Haushaltshilfe {
+    window.addEventListener("load", handleLoad);
+    
     /* Variablen */
     let totalCost: number = 0;
-    let aeinkaufen: HTMLInputElement = <HTMLInputElement>document.getElementById("A_einkaufen");
-    let ahaushalt: HTMLInputElement = <HTMLInputElement>document.getElementById("A_haushaltsarbeit");
-    let abank: HTMLInputElement = <HTMLInputElement>document.getElementById("A_bank");
-    let apost: HTMLInputElement = <HTMLInputElement>document.getElementById("A_post");
     //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#formular1");
     let article: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("#grocery");
     let household: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("#household");
@@ -15,7 +13,7 @@ namespace L04_Haushaltshilfe {
     let totalPrice: HTMLElement = <HTMLElement>document.querySelector("#betrag");
     let proof: HTMLInputElement = <HTMLInputElement>document.querySelector("#Angaben");
 
-    window.addEventListener("load", handleLoad);
+    
 
     function handleLoad(): void {
 
@@ -43,6 +41,11 @@ namespace L04_Haushaltshilfe {
     }
 
     function handleTask(): void {
+        let aeinkaufen: HTMLInputElement = <HTMLInputElement>document.getElementById("A_einkaufen");
+        let ahaushalt: HTMLInputElement = <HTMLInputElement>document.getElementById("A_haushaltsarbeit");
+        let abank: HTMLInputElement = <HTMLInputElement>document.getElementById("A_bank");
+        let apost: HTMLInputElement = <HTMLInputElement>document.getElementById("A_post");
+
         if (aeinkaufen.checked == true) {
             article.disabled = false;
             household.disabled = true;
@@ -90,10 +93,11 @@ namespace L04_Haushaltshilfe {
             let tdlöschen: HTMLTableDataCellElement = document.createElement("td");
 
 
+            console.log(entry);
             switch (entry[0]) {
                 case "article":
                     let itemPrice: number = Number(item.getAttribute("price"));
-                    let menge: number = Number(formData2.get("#anzahl"));
+                    let menge: number = Number(formData2.get("anzahl"));
                     let einheit: string = String(item.getAttribute("unit"));
                     itemPrice = menge * itemPrice;
 
@@ -118,15 +122,19 @@ namespace L04_Haushaltshilfe {
                 case "geld":
                     let money: string = String(item.getAttribute("value"));
                     if (money == "abheben") {
-                        let summe: number = Number(formData2.get("#geldanzahl"));
+                        let summe: number = Number(formData2.get("geldanzahl"));
+                        summe = summe * 5;
                         tdartikel.innerHTML = "" + money;
                         tdanzahl.innerHTML = "" + summe;
+                        tdeinheit.innerHTML = "";
                         row.appendChild(tdartikel);
                         row.appendChild(tdanzahl);
                         row.appendChild(tdeinheit);
+                        
                         totalCost += summe;
                         tdartikel.innerHTML = "Grundgebühr Bank";
                         tdanzahl.innerHTML = "5";
+                        tdeinheit.innerHTML = "";
                         row.appendChild(tdartikel);
                         row.appendChild(tdanzahl);
                         row.appendChild(tdeinheit);
@@ -137,6 +145,7 @@ namespace L04_Haushaltshilfe {
                     else if (money == "einzahlen") {
                         tdartikel.innerHTML = "" + money;
                         tdanzahl.innerHTML = "" + 5;
+                        tdeinheit.innerHTML = "";
                         row.appendChild(tdartikel);
                         row.appendChild(tdanzahl);
                         row.appendChild(tdeinheit);
@@ -147,7 +156,7 @@ namespace L04_Haushaltshilfe {
 
                 case "chores":
                     let householdCost: number = Number(item.getAttribute("price"));
-                    let bankmenge: number = Number(formData2.get("#homeanzahl"));
+                    let bankmenge: number = Number(formData2.get("homeanzahl"));
                     householdCost = bankmenge * householdCost;
                     tdartikel.innerHTML = "" + entry[1];
                     tdanzahl.innerHTML = "" + householdCost;
@@ -159,7 +168,7 @@ namespace L04_Haushaltshilfe {
 
                 case "sendung":
                     let postCost: number = Number(item.getAttribute("price"));
-                    let postmenge: number = Number(formData2.get("#briefanzahl"));
+                    let postmenge: number = Number(formData2.get("briefanzahl"));
                     postCost = postmenge * postCost;
                     tdartikel.innerHTML = "0" + entry[1];
                     tdanzahl.innerHTML = "" + postCost;
