@@ -1,4 +1,4 @@
-namespace L06_NodeAPI {
+/* namespace L06_NodeAPI {
     console.log("Hallo");
 
     let x: number = 0;
@@ -26,4 +26,4 @@ namespace L06_NodeAPI {
     function handleExit(_code: number): void {
         console.log("Tschüss!");
     }
-}
+} */

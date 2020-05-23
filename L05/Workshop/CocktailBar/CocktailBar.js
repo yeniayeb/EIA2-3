@@ -1,6 +1,6 @@
 "use strict";
-var L05_CocktailBarX;
-(function (L05_CocktailBarX) {
+var L05_CocktailBar;
+(function (L05_CocktailBar) {
     window.addEventListener("load", handleLoad);
     let form;
     async function handleLoad(_event) {
@@ -8,7 +8,7 @@ var L05_CocktailBarX;
         let response = await fetch("Data.json");
         let offer = await response.text();
         let data = JSON.parse(offer);
-        L05_CocktailBarX.generateContent(data);
+        L05_CocktailBar.generateContent(data);
         form = document.querySelector("form");
         let slider = document.querySelector("input#amount");
         let submit = document.querySelector("button[type=button]");
@@ -57,5 +57,5 @@ var L05_CocktailBarX;
         let amount = _event.target.value;
         progress.value = parseFloat(amount);
     }
-})(L05_CocktailBarX || (L05_CocktailBarX = {}));
+})(L05_CocktailBar || (L05_CocktailBar = {}));
 //# sourceMappingURL=CocktailBar.js.map

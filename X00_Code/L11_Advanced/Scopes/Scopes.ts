@@ -59,9 +59,10 @@ namespace Scope {
         else
             console.warn(_expected, " != ", _is);
     }
-}
 
-console.group("File");
-let x: string = "File";                                 // Scope of file
-Scope.log("File", x);
-console.groupEnd();
+    console.group("File");
+    let xx: string = "File";                                 // Scope of file
+    Scope.log("File", xx);
+    console.groupEnd();
+
+}

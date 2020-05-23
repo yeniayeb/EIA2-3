@@ -1,4 +1,4 @@
-namespace L05_CocktailBarX {
+namespace L05_CocktailBar {
     window.addEventListener("load", handleLoad);
     let form: HTMLFormElement;
 

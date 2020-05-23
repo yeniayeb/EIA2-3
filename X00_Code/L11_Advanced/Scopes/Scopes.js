@@ -58,9 +58,9 @@ var Scope;
             console.warn(_expected, " != ", _is);
     }
     Scope.log = log;
+    console.group("File");
+    let xx = "File"; // Scope of file
+    Scope.log("File", xx);
+    console.groupEnd();
 })(Scope || (Scope = {}));
-console.group("File");
-let x = "File"; // Scope of file
-Scope.log("File", x);
-console.groupEnd();
 //# sourceMappingURL=Scopes.js.map
