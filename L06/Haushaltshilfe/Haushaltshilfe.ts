@@ -2,7 +2,7 @@ namespace L06_Haushaltshilfe {
     window.addEventListener("load", handleLoad);
 
     /* Variablen */
-    let url: string = "https://eia2haushaltshilfe.herokuapp.com/";
+    let url: string = "https://haushaltshilfeeia.herokuapp.com/";
     /**berechneter Preis */
     let totalCost: number = 0;
     //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#formular1");

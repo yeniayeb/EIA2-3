@@ -3,7 +3,7 @@ var L06_Haushaltshilfe;
 (function (L06_Haushaltshilfe) {
     window.addEventListener("load", handleLoad);
     /* Variablen */
-    let url = "https://eia2haushaltshilfe.herokuapp.com/";
+    let url = "https://haushaltshilfeeia.herokuapp.com/";
     /**berechneter Preis */
     let totalCost = 0;
     //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#formular1");
