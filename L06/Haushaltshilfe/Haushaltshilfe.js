@@ -3,6 +3,7 @@ var L06_Haushaltshilfe;
 (function (L06_Haushaltshilfe) {
     window.addEventListener("load", handleLoad);
     /* Variablen */
+    let url = "https://eia2haushaltshilfe.herokuapp.com/";
     /**berechneter Preis */
     let totalCost = 0;
     //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#formular1");
@@ -222,10 +223,12 @@ var L06_Haushaltshilfe;
         console.log("send order");
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
-        await fetch("Haushaltshilfe.html?" + query.toString());
+        //await fetch("Haushaltshilfe.html?" + query.toString());
+        let response = await fetch(url + "?" + query.toString());
+        let responseText = await response.text();
         let date = document.querySelector("#date");
         let datum = date.value;
-        alert("Ihre Bestellung wird bearbeitet. Sie wird am " + datum + " zu Ihnen geliefert! Sie kostet " + totalCost.toFixed(2) + " €.");
+        alert("Ihre Bestellung wird bearbeitet. Sie wird am " + datum + " zu Ihnen geliefert! Sie kostet " + totalCost.toFixed(2) + " €." + responseText);
     }
 })(L06_Haushaltshilfe || (L06_Haushaltshilfe = {}));
 //# sourceMappingURL=Haushaltshilfe.js.map
