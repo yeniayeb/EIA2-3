@@ -2,11 +2,10 @@
   "name": "eia2haushaltshilfe",
   "version": "1.0.0",
   "description": "Repository for EIA2 in SoSe 2020",
-  "main": "index.js",
-  "dependencies": {
-    "@types/node": "^12.16.3"
+  "engines": {
+    "node": "12.16.3"
   },
-  "devDependencies": {},
+  "main": "index.js",
   "scripts": {
     "start": "node L06/Haushaltshilfe/Haushaltshilfe.js"
   },
