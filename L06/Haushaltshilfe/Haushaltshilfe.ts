@@ -1,4 +1,4 @@
-namespace L05_Haushaltshilfe {
+namespace L06_Haushaltshilfe {
     window.addEventListener("load", handleLoad);
 
     /* Variablen */

@@ -1,0 +1,19 @@
+{
+  "name": "eia2haushaltshilfe",
+  "version": "1.0.0",
+  "description": "Repository for EIA2 in SoSe 2020",
+  "main": "index.js",
+  "scripts": {
+    "start": "node L06/Haushaltshilfe/Haushaltshilfe.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s-wdh/EIA2.git"
+  },
+  "author": "s.w.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s-wdh/EIA2/issues"
+  },
+  "homepage": "https://github.com/s-wdh/EIA2#readme"
+}

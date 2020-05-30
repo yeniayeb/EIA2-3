@@ -1,4 +1,4 @@
-namespace L05_Haushaltshilfe {
+namespace L06_Haushaltshilfe {
     export function generateContent(_data: Data): void {
         for (let category in _data) {
             let items: Produkt[] = _data[category];

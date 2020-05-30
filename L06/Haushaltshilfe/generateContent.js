@@ -1,6 +1,6 @@
 "use strict";
-var L05_Haushaltshilfe;
-(function (L05_Haushaltshilfe) {
+var L06_Haushaltshilfe;
+(function (L06_Haushaltshilfe) {
     function generateContent(_data) {
         for (let category in _data) {
             let items = _data[category];
@@ -26,7 +26,7 @@ var L05_Haushaltshilfe;
                 fieldset.insertBefore(group, fieldset.childNodes[0]);
         }
     }
-    L05_Haushaltshilfe.generateContent = generateContent;
+    L06_Haushaltshilfe.generateContent = generateContent;
     function generateExtra(_detail) {
         for (let choice in _detail) {
             let elements = _detail[choice];
@@ -43,7 +43,7 @@ var L05_Haushaltshilfe;
                 fieldset.insertBefore(group, fieldset.childNodes[0]);
         }
     }
-    L05_Haushaltshilfe.generateExtra = generateExtra;
+    L06_Haushaltshilfe.generateExtra = generateExtra;
     function createDatalist(_item, _category) {
         let group = document.createElement("div");
         let input = document.createElement("input");
@@ -126,5 +126,5 @@ var L05_Haushaltshilfe;
         }
         return group;
     }
-})(L05_Haushaltshilfe || (L05_Haushaltshilfe = {}));
+})(L06_Haushaltshilfe || (L06_Haushaltshilfe = {}));
 //# sourceMappingURL=generateContent.js.map
