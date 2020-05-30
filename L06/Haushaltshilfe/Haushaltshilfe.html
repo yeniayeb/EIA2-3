@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haushaltshilfe</title>
+    <script src="Interface.js"></script>
+    <script src="generateContent.js"></script>
+    <link rel="stylesheet" href="Haushaltshilfe.css">
+</head>
+
+<body>
+
+    <h1>Haushaltshilfe</h1>
+    <p id="info">
+        Wählen Sie die Aufgaben, welche erledigt werden sollen und die Unterkatrgorien und Anzahlen aus.
+        Wenn sie alles erledigt haben, können Sie unten über den Button ihre Bestellung aufgeben.
+    </p>
+    <div id="form">
+
+        <form id="formular1" method="GET">
+            <fieldset>
+                <h3>Bitte wählen Sie eine Aufgabe:</h3>
+                <input type="radio" name="task" id="A_einkaufen"><label>Einkaufen</label><br>
+                <input type="radio" name="task" id="A_haushaltsarbeit"><label>Haushaltsarbeit</label><br>
+                <input type="radio" name="task" id="A_bank"><label>Bank</label><br>
+                <input type="radio" name="task" id="A_post"><label>Post</label><br>
+                <button id="confirm" type="button">Ok</button>
+            </fieldset>
+
+
+            <!-- Einkaufsformular -->
+            <div class="einkaufen">
+
+                <fieldset id="grocery" disabled>
+                    <fieldset id="article"></fieldset>
+
+                    <span id="foodAnzahl">
+                        <label for="anzahl">Anzahl (1-5)</label>
+                        <input type="range" class="slider" id="anzahl" name="anzahl" min="1" max="5" step="1.0"
+                            value="1.0">
+                        <label for="anzahl" id="foodEinheit"></label>
+                    </span>
+                    <button id="getfood" type="button">Ok</button>
+                </fieldset>
+
+            </div>
+
+            <!-- Haushaltsarbeiten Formular -->
+            <div class="haushaltsarbeit">
+
+                <fieldset id="household" disabled>
+                    <fieldset id="househelp"></fieldset>
+                    <span id="householdAnzahl">
+                        <label for="homeanzahl">Anzahl (1-10)</label>
+                        <input type="range" class="slider" id="homeanzahl" name="homeanzahl" min="1" max="10" step="1.0"
+                            value="1.0">
+                        <label for="homeanzahl" id="householdEinheit"></label>
+                    </span>
+                    <button id="gethelp" type="button">Ok</button>
+                </fieldset>
+
+            </div>
+
+            <!-- Formular Bank -->
+            <div class="bank">
+
+                <fieldset id="money" disabled>
+                    <fieldset id="bankhelp"></fieldset>
+                    <span id="moneyAnzahl">
+                        <label for="geldanzahl">Menge in 5€ Schritten</label>
+                        <input type="range" class="slider" id="geldanzahl" name="geldanzahl" min="1" max="100"
+                            step="1.0" value="1.0">
+                        <label for="geldanzahl">€</label>
+                    </span>
+                    <button id="getmoney" type="button">Ok</button>
+                </fieldset>
+
+            </div>
+
+            <!-- Formular Post -->
+            <div class="post">
+
+                <fieldset id="postoffice" disabled>
+                    <fieldset id="posthelp"></fieldset>
+                    <span id="postAnzahl">
+                        <label for="briefanzahl">Anzahl (1-20)</label>
+                        <input type="range" class="slider" id="briefanzahl" name="briefanzahl" min="1" max="20"
+                            step="1.0" value="1.0">
+                        <label for="briefanzahl">Briefe</label>
+                    </span>
+                    <button id="getpost" type="button">Ok</button>
+                </fieldset>
+            </div>
+
+            <div id="Zahlen">
+                <fieldset id="zahlungsart">
+                    <legend>Wie möchten sie Zahlen?</legend>
+                </fieldset>
+            </div>
+
+
+        </form>
+
+        <div id="position">
+            <div id="Übersicht">
+                <fieldset>
+                    <h3>Bestellübersicht:</h3>
+                    <table id="rechnung">
+                        <tr>
+                            <th>Artikel</th>
+                            <th>Anzahl</th>
+                            <th>Einheit</th>
+                            <th>Preis in €</th>
+                            <th>Löschen</th>
+                        </tr>
+                    </table>
+                </fieldset>
+            </div>
+
+            <!-- <div>
+                <fieldset>
+                    <legend>Trinkgeld</legend>
+                    <input type="checkbox" name="tip" id="tip"> <label for="tip">ja, </label>
+                    <input type="number" name="tipamount" id="tipamount" min="0"> <label for="tipamount"> €</label>
+                    <button id="gettip" type="button">Ok</button>
+                </fieldset>
+            </div> -->
+            <div id="endsumme">
+                <fieldset>
+                    <p>Endsumme: <span id="betrag"></span> €</p>
+                </fieldset>
+            </div>
+
+            <div id="Datum">
+                <fieldset>
+                    <label for="date">Lieferdatum: </label> <input id="date" type="date">
+                </fieldset>
+            </div>
+
+        </div>
+
+        <div id="buttons">
+            <button id="end" type="button" form="formular1">Bestellung abschließen</button>
+            <button id="delete" type="reset" form="formular1">Löschen</button>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+</body>
+<script src="Haushaltshilfe.js"></script>
+
+</html>

@@ -1,0 +1,16 @@
+{
+    "zahlungsart": [
+        {
+            "name": "Paypal"
+        },
+        {
+            "name": "Überweisung"
+        },
+        {
+            "name": "Bar"
+        },
+        {
+            "name": "Bankeinzug"
+        }
+    ]
+}
