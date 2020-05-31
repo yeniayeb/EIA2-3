@@ -1,7 +1,7 @@
 import * as Http from "http";
 import * as Url from "url";
 
-export namespace L06_CocktailBar {
+export namespace L06_L06_Haushaltshilfe {
     let server: Http.Server = Http.createServer();
 
     let port: number | string | undefined = process.env.PORT;
@@ -21,9 +21,9 @@ export namespace L06_CocktailBar {
 
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-            for (let key in url.query) {
+            /* for (let key in url.query) {
                 _response.write(key + ":" + url.query[key] + "<br/>");
-            }
+            } */
 
             let jsonString: string = JSON.stringify(url.query);
             _response.write(jsonString);

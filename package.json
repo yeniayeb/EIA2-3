@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node L06/Haushaltshilfe/Haushaltshilfe.js"
+    "start": "node L06/Haushaltshilfe/server.js"
   },
   "repository": {
     "type": "git",
