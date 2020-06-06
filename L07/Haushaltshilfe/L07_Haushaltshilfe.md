@@ -1,0 +1,2 @@
+# Aufgabe
+Setze im Internet eine Datenbank als Service auf. Dein Haushaltshilfe-Server soll die Anfragen der Hilfebedürftigen dort abspeichern und wieder auslesen können. Erweitere auch den Client, so dass eine Abfrage verschickt werden kann um Datensätze abzurufen. Die Serverantwort soll aufbereitet und die Anfragen dargestellt werden, so dass ein Hilfeunternehmen sich daraus einen Auftrag ableiten kann.
