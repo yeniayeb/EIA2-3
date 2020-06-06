@@ -261,6 +261,9 @@ namespace L07_Haushaltshilfe {
         let response: Response = await fetch(url + "?" + query.toString() + "&Lieferdatum=" + datumstring );
         let responseText: string = await response.text();
 
+        //nur was noch aktiv im form Element ausgewählt ist kommt in den alert und wird an den Server weitergegeben.
+        //sehr nervige Sache und mir fällt gerade auch keine einfache Lösung dafür ein. :(
+
         alert("Ihre Bestellung wird bearbeitet. \n Sie wird am " + datum + " zu Ihnen geliefert!" +
             "\n Sie kostet " + totalCost.toFixed(2) + " €." + "\n Die Bestellung: " + "\n" + responseText);
     }
