@@ -6,6 +6,7 @@ const Mongo = require("mongodb");
 var L07_Haushaltshilfe;
 (function (L07_Haushaltshilfe) {
     let orders;
+    let totalOrder = [];
     let port = process.env.PORT;
     if (port == undefined) {
         port = 5001;
@@ -27,7 +28,7 @@ var L07_Haushaltshilfe;
         orders = mongoClient.db("Haushaltshilfe").collection("Orders");
         console.log("Database connection ", orders != undefined);
     }
-    function handleRequest(_request, _response) {
+    async function handleRequest(_request, _response) {
         console.log("What's up?");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
@@ -38,14 +39,34 @@ var L07_Haushaltshilfe;
                 _response.write(key + ":" + url.query[key] + "<br/>");
             } */
             console.log(url.query);
-            let jsonString = JSON.stringify((url.query), null, 2);
-            _response.write(jsonString);
-            storeOrder(url.query);
+            if (_request.url == "/?getOrder=yes") {
+                console.log("it works until here");
+                let options = { useNewUrlParser: true, useUnifiedTopology: true };
+                let mongoClient = new Mongo.MongoClient(databaseUrl, options);
+                await mongoClient.connect();
+                let orders = mongoClient.db("Haushaltshilfe").collection("Orders");
+                await orders.find();
+                let cursor = orders.find();
+                await cursor.forEach(retrieveOrders);
+                let jsonString = JSON.stringify(totalOrder);
+                let answer = jsonString.toString();
+                _response.write(answer);
+                totalOrder = [];
+            }
+            else {
+                let jsonString = JSON.stringify((url.query), null, 2);
+                _response.write(jsonString);
+                storeOrder(url.query);
+            }
         }
         _response.end();
     }
     function storeOrder(_order) {
         orders.insert(_order);
+    }
+    function retrieveOrders(_item) {
+        let jsonString = JSON.stringify(_item);
+        totalOrder.push(jsonString);
     }
 })(L07_Haushaltshilfe = exports.L07_Haushaltshilfe || (exports.L07_Haushaltshilfe = {}));
 //# sourceMappingURL=server.js.map

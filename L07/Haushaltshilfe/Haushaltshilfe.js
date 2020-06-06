@@ -228,7 +228,8 @@ var L07_Haushaltshilfe;
         let responseText = await response.text();
         let date = document.querySelector("#date");
         let datum = date.value;
-        alert("Ihre Bestellung wird bearbeitet. Sie wird am " + datum + " zu Ihnen geliefert! Sie kostet " + totalCost.toFixed(2) + " €." + responseText);
+        alert("Ihre Bestellung wird bearbeitet. Sie wird am " + datum + " zu Ihnen geliefert!" +
+            "\n Sie kostet " + totalCost.toFixed(2) + " €." + "\n" + responseText);
     }
 })(L07_Haushaltshilfe || (L07_Haushaltshilfe = {}));
 //# sourceMappingURL=Haushaltshilfe.js.map
