@@ -1,7 +1,7 @@
 import * as Http from "http";
 import * as Url from "url";
 
-export namespace L06_L06_Haushaltshilfe {
+export namespace L06_Haushaltshilfe {
     let server: Http.Server = Http.createServer();
 
     let port: number | string | undefined = process.env.PORT;

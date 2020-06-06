@@ -1,0 +1,2 @@
+# Aufgabe
+Implementiere einen kleinen Server auf Heroku, der die Daten deiner Haushaltshilfe-App entgegen nimmt und als JSON-String wieder zurück schickt. Passe den Client so an, dass er mit diesem Server kommuniziert und die zurückerhaltenen Daten dem Nutzer anzeigt.

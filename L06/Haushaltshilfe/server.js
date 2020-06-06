@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http");
 const Url = require("url");
-var L06_CocktailBar;
-(function (L06_CocktailBar) {
+var L06_Haushaltshilfe;
+(function (L06_Haushaltshilfe) {
     let server = Http.createServer();
     let port = process.env.PORT;
     if (port == undefined)
@@ -17,13 +17,13 @@ var L06_CocktailBar;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            for (let key in url.query) {
+            /* for (let key in url.query) {
                 _response.write(key + ":" + url.query[key] + "<br/>");
-            }
+            } */
             let jsonString = JSON.stringify(url.query);
             _response.write(jsonString);
         }
         _response.end();
     }
-})(L06_CocktailBar = exports.L06_CocktailBar || (exports.L06_CocktailBar = {}));
+})(L06_Haushaltshilfe = exports.L06_Haushaltshilfe || (exports.L06_Haushaltshilfe = {}));
 //# sourceMappingURL=server.js.map
