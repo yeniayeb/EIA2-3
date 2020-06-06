@@ -256,7 +256,8 @@ namespace L07_Haushaltshilfe {
 
         let date: HTMLInputElement = <HTMLInputElement>document.querySelector("#date");
         let datum: string = date.value;
-        alert("Ihre Bestellung wird bearbeitet. Sie wird am " + datum + " zu Ihnen geliefert! Sie kostet " + totalCost.toFixed(2) + " €." + responseText);
+        alert("Ihre Bestellung wird bearbeitet. Sie wird am " + datum + " zu Ihnen geliefert!" +
+            "\n Sie kostet " + totalCost.toFixed(2) + " €." + "\n" + responseText);
     }
 
 }

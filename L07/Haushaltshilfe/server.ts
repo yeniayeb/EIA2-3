@@ -10,6 +10,8 @@ export namespace L07_Haushaltshilfe {
 
     let orders: Mongo.Collection;
 
+    let totalOrder: string[] = [];
+
     let port: number | string | undefined = process.env.PORT;
     if (port == undefined) {
         port = 5001;
@@ -38,7 +40,7 @@ export namespace L07_Haushaltshilfe {
         console.log("Database connection ", orders != undefined);
     }
 
-    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+    async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<any> {
         console.log("What's up?");
 
         _response.setHeader("content-type", "text/html; charset=utf-8");
@@ -53,15 +55,36 @@ export namespace L07_Haushaltshilfe {
 
             console.log(url.query);
 
-            let jsonString: string = JSON.stringify((url.query), null, 2);
-            _response.write(jsonString);
-            storeOrder(url.query);
-
+            if (_request.url == "/?getOrder=yes") {
+                console.log("it works until here");
+                let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+                let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(databaseUrl, options);
+                await mongoClient.connect();
+                let orders: Mongo.Collection = mongoClient.db("Haushaltshilfe").collection("Orders");
+                await orders.find();
+                let cursor: Mongo.Cursor<any> = orders.find();
+                await cursor.forEach(retrieveOrders);
+                let jsonString: string = JSON.stringify(totalOrder);
+                let answer: string = jsonString.toString();
+                _response.write(answer);
+                totalOrder = [];
+            } else {
+                let jsonString: string = JSON.stringify((url.query), null, 2);
+                _response.write(jsonString);
+                storeOrder(url.query);
+            }
 
         }
         _response.end();
     }
+
+
     function storeOrder(_order: Order): void {
         orders.insert(_order);
+    }
+
+    function retrieveOrders(_item: object): void {
+        let jsonString: string = JSON.stringify(_item);
+        totalOrder.push(jsonString);
     }
 }
