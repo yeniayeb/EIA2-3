@@ -249,15 +249,20 @@ namespace L07_Haushaltshilfe {
     async function sendOrder(): Promise<void> {
         console.log("send order");
         let formData: FormData = new FormData(document.forms[0]);
+        for (let entry of formData) {
+            console.log(entry[1]);
+        }
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         //await fetch("Haushaltshilfe.html?" + query.toString());
-        let response: Response = await fetch(url + "?" + query.toString());
+        let date: HTMLInputElement = <HTMLInputElement>document.querySelector("#date");
+        let datumstring: string = String(date.value);
+        let datum: string = date.value;
+        
+        let response: Response = await fetch(url + "?" + query.toString() + "&Lieferdatum=" + datumstring );
         let responseText: string = await response.text();
 
-        let date: HTMLInputElement = <HTMLInputElement>document.querySelector("#date");
-        let datum: string = date.value;
-        alert("Ihre Bestellung wird bearbeitet. Sie wird am " + datum + " zu Ihnen geliefert!" +
-            "\n Sie kostet " + totalCost.toFixed(2) + " €." + "\n" + responseText);
+        alert("Ihre Bestellung wird bearbeitet. \n Sie wird am " + datum + " zu Ihnen geliefert!" +
+            "\n Sie kostet " + totalCost.toFixed(2) + " €." + "\n Die Bestellung: " + "\n" + responseText);
     }
 
 }

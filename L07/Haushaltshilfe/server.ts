@@ -61,8 +61,7 @@ export namespace L07_Haushaltshilfe {
                 let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(databaseUrl, options);
                 await mongoClient.connect();
                 let orders: Mongo.Collection = mongoClient.db("Haushaltshilfe").collection("Orders");
-                await orders.find();
-                let cursor: Mongo.Cursor<any> = orders.find();
+                let cursor: Mongo.Cursor<any> = await orders.find();
                 await cursor.forEach(retrieveOrders);
                 let jsonString: string = JSON.stringify(totalOrder);
                 let answer: string = jsonString.toString();
