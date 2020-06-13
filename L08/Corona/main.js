@@ -3,6 +3,8 @@ var L08_Corona;
 (function (L08_Corona) {
     window.addEventListener("load", handleLoad);
     let crc2;
+    let width = 720;
+    let heigth = 360;
     function handleLoad() {
         console.log("test");
         let canvas = document.querySelector("canvas");
@@ -54,32 +56,32 @@ var L08_Corona;
         for (let i = 0; i < 6; i++) {
             let x;
             let y;
-            x = (Math.random() * 360);
-            y = (540 * Math.random());
+            x = (Math.random() * (width / 2));
+            y = ((heigth / 2) * Math.random());
             createCorona(x, y);
         }
         //Antibodies
         for (let i = 0; i < 10; i++) {
             let x;
             let y;
-            x = 360 + (Math.random() * 360);
-            y = 540 + (540 * Math.random());
+            x = (width / 2) + (Math.random() * (width / 2));
+            y = (heigth / 2) + ((heigth / 2) * Math.random());
             createAntibody(x, y);
         }
         //Killer Cells
         for (let i = 0; i < 15; i++) {
             let x;
             let y;
-            x = 360 + (Math.random() * 360);
-            y = (540 * Math.random());
+            x = (width / 2) + (Math.random() * (width / 2));
+            y = ((heigth / 2) * Math.random());
             createKillerCell(x, y);
         }
         //Particle
         for (let i = 0; i < 200; i++) {
             let x;
             let y;
-            x = (Math.random() * 720);
-            y = (1080 * Math.random());
+            x = (Math.random() * width);
+            y = (heigth * Math.random());
             createParticle(x, y, i);
         }
     }

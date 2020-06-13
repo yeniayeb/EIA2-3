@@ -1,6 +1,8 @@
 namespace L08_Corona {
     window.addEventListener("load", handleLoad);
     let crc2: CanvasRenderingContext2D;
+    let width: number = 720;
+    let heigth: number = 360;
 
     function handleLoad(): void {
         console.log("test");
@@ -8,6 +10,7 @@ namespace L08_Corona {
         if (!canvas)
             return;
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
+
         preparation();
         drawBackground(canvas);
         positions();
@@ -58,32 +61,32 @@ namespace L08_Corona {
         for (let i: number = 0; i < 6; i++) {
             let x: number;
             let y: number;
-            x = (Math.random() * 360);
-            y = (540 * Math.random());
+            x = (Math.random() * (width / 2));
+            y = ((heigth / 2) * Math.random());
             createCorona(x, y);
         }
         //Antibodies
         for (let i: number = 0; i < 10; i++) {
             let x: number;
             let y: number;
-            x = 360 + (Math.random() * 360);
-            y = 540 + (540 * Math.random());
+            x = (width / 2) + (Math.random() * (width / 2));
+            y = (heigth / 2) + ((heigth / 2) * Math.random());
             createAntibody(x, y);
         }
         //Killer Cells
         for (let i: number = 0; i < 15; i++) {
             let x: number;
             let y: number;
-            x = 360 + (Math.random() * 360);
-            y = (540 * Math.random());
+            x = (width / 2) + (Math.random() * (width / 2));
+            y = ((heigth / 2) * Math.random());
             createKillerCell(x, y);
         }
         //Particle
         for (let i: number = 0; i < 200; i++) {
             let x: number;
             let y: number;
-            x = (Math.random() * 720);
-            y = (1080 * Math.random());
+            x = (Math.random() * width);
+            y = (heigth * Math.random());
             createParticle(x, y, i);
         }
 
