@@ -35,10 +35,9 @@ var L08_Corona;
         pattern.lineTo(70, 15);
         pattern.lineTo(80, 15);
         pattern.lineTo(70, 15);
-        pattern.lineTo(70, 20);
-        pattern.lineTo(50, 31);
-        pattern.lineTo(30, 31);
-        pattern.lineTo(30, 31);
+        pattern.lineTo(70, 21);
+        pattern.lineTo(50, 30);
+        pattern.lineTo(30, 30);
         pattern.lineTo(10, 15);
         pattern.strokeStyle = "#787878";
         pattern.stroke();
@@ -84,7 +83,7 @@ var L08_Corona;
             y = ((heigth / 2) * Math.random());
             createKillerCell(x, y);
         }
-        //Particle
+        //Particles
         for (let i = 0; i < 200; i++) {
             let x;
             let y;
