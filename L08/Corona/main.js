@@ -147,6 +147,7 @@ var L08_Corona;
         crc2.save();
         crc2.translate(_x, _y);
         crc2.beginPath();
+        crc2.rotate(Math.random());
         crc2.moveTo(0, 20);
         crc2.lineTo(30, 20);
         crc2.lineTo(50, 5);
