@@ -52,6 +52,14 @@ var L08_Corona;
         crc2.fillRect(0, 0, _canvas.width, _canvas.height);
     }
     function positions() {
+        //Cells
+        for (let i = 0; i < 35; i++) {
+            let x;
+            let y;
+            x = (Math.random() * (width / 2));
+            y = (heigth / 2) + ((heigth / 2) * Math.random());
+            createCell(x, y);
+        }
         //Corona - Viren (mind. 5)
         for (let i = 0; i < 6; i++) {
             let x;
@@ -61,7 +69,7 @@ var L08_Corona;
             createCorona(x, y);
         }
         //Antibodies
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 15; i++) {
             let x;
             let y;
             x = (width / 2) + (Math.random() * (width / 2));
@@ -69,7 +77,7 @@ var L08_Corona;
             createAntibody(x, y);
         }
         //Killer Cells
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < 12; i++) {
             let x;
             let y;
             x = (width / 2) + (Math.random() * (width / 2));
@@ -84,6 +92,25 @@ var L08_Corona;
             y = (heigth * Math.random());
             createParticle(x, y, i);
         }
+    }
+    function createCell(_x, _y) {
+        console.log("cell");
+        crc2.restore();
+        crc2.save();
+        crc2.translate(_x, _y);
+        crc2.beginPath();
+        crc2.rotate(Math.random());
+        crc2.ellipse(0, 0, 20, 10, 0, 0, 2 * Math.PI);
+        crc2.fillStyle = "#00a308";
+        crc2.fill();
+        crc2.closePath();
+        //nucleus
+        crc2.beginPath();
+        crc2.arc(-5, 0, 4, 0, 2 * Math.PI);
+        crc2.fillStyle = "#005204";
+        crc2.fill();
+        crc2.closePath();
+        crc2.restore();
     }
     function createCorona(_x, _y) {
         console.log("coroni");
