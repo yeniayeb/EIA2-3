@@ -3,6 +3,7 @@ var L08_Corona;
 (function (L08_Corona) {
     window.addEventListener("load", handleLoad);
     let crc2;
+    /* screen size of the end device, so it can be changed quickly */
     let width = 720;
     let heigth = 360;
     function handleLoad() {

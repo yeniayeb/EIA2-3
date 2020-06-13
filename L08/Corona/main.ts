@@ -1,6 +1,7 @@
 namespace L08_Corona {
     window.addEventListener("load", handleLoad);
     let crc2: CanvasRenderingContext2D;
+    /* screen size of the end device, so it can be changed quickly */
     let width: number = 720;
     let heigth: number = 360;
 
