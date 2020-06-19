@@ -1,4 +1,4 @@
-namespace L09_Asteroids {
+/* namespace L09_Asteroids {
     export class Asteroid {
         position: Vector;
         velocity: Vector;
@@ -52,4 +52,4 @@ namespace L09_Asteroids {
             return (Math.abs(difference.x) < hitsize && Math.abs(difference.y) < hitsize);
         }
     }
-}
+} */

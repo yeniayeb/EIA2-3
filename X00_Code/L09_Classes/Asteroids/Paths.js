@@ -1,7 +1,9 @@
 "use strict";
-var L09_Asteroids;
-(function (L09_Asteroids) {
-    L09_Asteroids.shapesAsteroids = [
+/* namespace L09_Asteroids {
+    export let asteroidPaths: Path2D[];
+    export let ufoPath: Path2D;
+
+    export let shapesAsteroids: number[][][] = [
         [
             [30, 1], [50, 15], [71, 1], [88, 31], [67, 40], [84, 63], [59, 93], [30, 79], [19, 87], [2, 63], [15, 43], [8, 20]
         ],
@@ -15,16 +17,17 @@ var L09_Asteroids;
             [37, 3], [70, 14], [62, 34], [83, 31], [78, 76], [55, 96], [20, 84], [7, 67], [5, 27], [20, 15], [39, 39]
         ]
     ];
-    function createPaths() {
-        L09_Asteroids.asteroidPaths = createAsteroidPaths(L09_Asteroids.shapesAsteroids);
-        L09_Asteroids.ufoPath = createUfoPath();
+
+    export function createPaths(): void {
+        asteroidPaths = createAsteroidPaths(shapesAsteroids);
+        ufoPath = createUfoPath();
     }
-    L09_Asteroids.createPaths = createPaths;
-    function createAsteroidPaths(_shapes) {
-        let paths = [];
+
+    function createAsteroidPaths(_shapes: number[][][]): Path2D[] {
+        let paths: Path2D[] = [];
         for (let type of _shapes) {
-            let path = new Path2D();
-            let first = true;
+            let path: Path2D = new Path2D();
+            let first: boolean = true;
             // console.group(type);
             for (let coordinates of type) {
                 // console.log(coordinates);
@@ -40,8 +43,9 @@ var L09_Asteroids;
         }
         return paths;
     }
-    function createUfoPath() {
-        let path = new Path2D();
+
+    function createUfoPath(): Path2D {
+        let path: Path2D = new Path2D();
         path.moveTo(20, 13);
         path.lineTo(27, 3);
         path.lineTo(38, 3);
@@ -53,10 +57,11 @@ var L09_Asteroids;
         path.lineTo(20, 13);
         path.lineTo(43, 13);
         path.closePath();
+
         path.moveTo(4, 25);
         path.lineTo(59, 25);
         path.closePath();
         return path;
     }
-})(L09_Asteroids || (L09_Asteroids = {}));
+} */ 
 //# sourceMappingURL=Paths.js.map

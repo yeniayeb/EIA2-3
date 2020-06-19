@@ -1,5 +1,4 @@
-"use strict";
-/* namespace L09_Asteroids {
+namespace L09_Asteroids {
     export class Asteroid {
         position: Vector;
         velocity: Vector;
@@ -53,5 +52,4 @@
             return (Math.abs(difference.x) < hitsize && Math.abs(difference.y) < hitsize);
         }
     }
-} */ 
-//# sourceMappingURL=Asteroid.js.map
+}

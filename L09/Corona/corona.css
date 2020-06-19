@@ -1,0 +1,13 @@
+body {
+    overflow: hidden;
+    margin: unset;
+    padding: unset;
+    background-color: unset;
+    color: unset;
+}
+
+/* Die Größe des Bildes soll für dein Smartphone optimiert sein, 
+sich per CSS aber auch an andere Bildschirme anpassen. */
+@media only screen and (min-width: 721px) {
+    canvas {width: 100%;}
+}

@@ -1,4 +1,4 @@
-namespace L09_Asteroids {
+/* namespace L09_Asteroids {
     window.addEventListener("load", handleLoad);
 
     export let crc2: CanvasRenderingContext2D;
@@ -77,4 +77,4 @@ namespace L09_Asteroids {
         // ship.draw();
         // handleCollisions();
     }
-}
+} */

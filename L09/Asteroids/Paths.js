@@ -1,8 +1,7 @@
-/* namespace L09_Asteroids {
-    export let asteroidPaths: Path2D[];
-    export let ufoPath: Path2D;
-
-    export let shapesAsteroids: number[][][] = [
+"use strict";
+var L09_Asteroids;
+(function (L09_Asteroids) {
+    L09_Asteroids.shapesAsteroids = [
         [
             [30, 1], [50, 15], [71, 1], [88, 31], [67, 40], [84, 63], [59, 93], [30, 79], [19, 87], [2, 63], [15, 43], [8, 20]
         ],
@@ -16,17 +15,16 @@
             [37, 3], [70, 14], [62, 34], [83, 31], [78, 76], [55, 96], [20, 84], [7, 67], [5, 27], [20, 15], [39, 39]
         ]
     ];
-
-    export function createPaths(): void {
-        asteroidPaths = createAsteroidPaths(shapesAsteroids);
-        ufoPath = createUfoPath();
+    function createPaths() {
+        L09_Asteroids.asteroidPaths = createAsteroidPaths(L09_Asteroids.shapesAsteroids);
+        L09_Asteroids.ufoPath = createUfoPath();
     }
-
-    function createAsteroidPaths(_shapes: number[][][]): Path2D[] {
-        let paths: Path2D[] = [];
+    L09_Asteroids.createPaths = createPaths;
+    function createAsteroidPaths(_shapes) {
+        let paths = [];
         for (let type of _shapes) {
-            let path: Path2D = new Path2D();
-            let first: boolean = true;
+            let path = new Path2D();
+            let first = true;
             // console.group(type);
             for (let coordinates of type) {
                 // console.log(coordinates);
@@ -42,9 +40,8 @@
         }
         return paths;
     }
-
-    function createUfoPath(): Path2D {
-        let path: Path2D = new Path2D();
+    function createUfoPath() {
+        let path = new Path2D();
         path.moveTo(20, 13);
         path.lineTo(27, 3);
         path.lineTo(38, 3);
@@ -56,10 +53,10 @@
         path.lineTo(20, 13);
         path.lineTo(43, 13);
         path.closePath();
-
         path.moveTo(4, 25);
         path.lineTo(59, 25);
         path.closePath();
         return path;
     }
-} */
+})(L09_Asteroids || (L09_Asteroids = {}));
+//# sourceMappingURL=Paths.js.map
